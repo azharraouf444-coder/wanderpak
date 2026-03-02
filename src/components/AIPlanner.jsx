@@ -62,7 +62,7 @@ export default function AIPlanner() {
                                     value={budget}
                                     onChange={(e) => setBudget(e.target.value)}
                                     placeholder="e.g. 50000"
-                                    className="w-full bg-white/90 border border-white/30 rounded-xl py-4 pl-12 pr-4 focus:ring-2 focus:ring-emerald-400 focus:outline-none text-slate-800 font-bold placeholder-slate-400"
+                                    className="w-full bg-white/90 dark:bg-slate-900/90 border border-white/30 dark:border-slate-700/50 rounded-xl py-4 pl-12 pr-4 focus:ring-2 focus:ring-emerald-400 focus:outline-none text-slate-800 dark:text-slate-100 font-bold placeholder-slate-400 dark:placeholder-slate-500 transition-colors"
                                 />
                             </div>
                         </div>
@@ -79,7 +79,7 @@ export default function AIPlanner() {
                                     placeholder="e.g. 3"
                                     min="1"
                                     max="14"
-                                    className="w-full bg-white/90 border border-white/30 rounded-xl py-4 pl-12 pr-4 focus:ring-2 focus:ring-emerald-400 focus:outline-none text-slate-800 font-bold placeholder-slate-400"
+                                    className="w-full bg-white/90 dark:bg-slate-900/90 border border-white/30 dark:border-slate-700/50 rounded-xl py-4 pl-12 pr-4 focus:ring-2 focus:ring-emerald-400 focus:outline-none text-slate-800 dark:text-slate-100 font-bold placeholder-slate-400 dark:placeholder-slate-500 transition-colors"
                                 />
                             </div>
                         </div>
@@ -139,14 +139,14 @@ export default function AIPlanner() {
                                 key="result"
                                 initial={{ opacity: 0, x: 50 }}
                                 animate={{ opacity: 1, x: 0 }}
-                                className="bg-white rounded-3xl p-8 w-full shadow-2xl relative"
+                                className="bg-white dark:bg-slate-950 rounded-3xl p-8 w-full shadow-2xl dark:shadow-emerald-900/10 border border-transparent dark:border-slate-800 relative transition-colors"
                             >
                                 <div className="absolute -top-4 -right-4 bg-yellow-400 text-yellow-900 font-bold px-4 py-2 rounded-xl shadow-lg transform rotate-6 border-2 border-white">
                                     Trip Ready!
                                 </div>
 
-                                <h3 className="text-2xl font-bold text-slate-800 mb-2">{itinerary.title}</h3>
-                                <p className="text-emerald-600 font-semibold mb-6 flex items-center gap-1">Estimated Cost: {itinerary.budget}</p>
+                                <h3 className="text-2xl font-bold text-slate-800 dark:text-white mb-2 transition-colors">{itinerary.title}</h3>
+                                <p className="text-emerald-600 dark:text-emerald-400 font-semibold mb-6 flex items-center gap-1 transition-colors">Estimated Cost: {itinerary.budget}</p>
 
                                 <div className="space-y-6 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-200 before:to-transparent">
                                     {itinerary.days.map((item, idx) => (
@@ -157,14 +157,14 @@ export default function AIPlanner() {
                                             transition={{ delay: idx * 0.2 }}
                                             className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active"
                                         >
-                                            <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-50 text-slate-500 group-[.is-active]:bg-emerald-500 group-[.is-active]:text-emerald-50 group-[.is-active]:border-emerald-400 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 font-bold">
+                                            <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white dark:border-slate-800 bg-slate-50 dark:bg-slate-900 text-slate-500 dark:text-slate-400 group-[.is-active]:bg-emerald-500 group-[.is-active]:text-emerald-50 group-[.is-active]:border-emerald-400 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 font-bold transition-colors">
                                                 {item.day}
                                             </div>
-                                            <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-slate-50 p-4 rounded-2xl border border-slate-100 shadow-sm ml-4 md:ml-0">
+                                            <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-slate-50 dark:bg-slate-900 p-4 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm ml-4 md:ml-0 transition-colors">
                                                 <div className="flex items-center justify-between space-x-2 mb-1">
-                                                    <div className="font-bold text-slate-800">Day {item.day}: {item.title}</div>
+                                                    <div className="font-bold text-slate-800 dark:text-slate-100 transition-colors">Day {item.day}: {item.title}</div>
                                                 </div>
-                                                <div className="text-slate-500 text-sm leading-relaxed">{item.desc}</div>
+                                                <div className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed transition-colors">{item.desc}</div>
                                             </div>
                                         </motion.div>
                                     ))}

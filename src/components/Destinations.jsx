@@ -31,7 +31,7 @@ const destinations = [
 
 export default function Destinations() {
     return (
-        <section id="destinations" className="py-24 bg-slate-50 relative">
+        <section id="destinations" className="py-24 bg-slate-50 dark:bg-slate-900 relative transition-colors duration-300">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 <div className="text-center mb-16">
@@ -48,7 +48,7 @@ export default function Destinations() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-4xl md:text-5xl font-bold text-slate-900 mb-4"
+                        className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4 transition-colors"
                     >
                         Popular Destinations
                     </motion.h3>
@@ -57,7 +57,7 @@ export default function Destinations() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="text-lg text-slate-600 max-w-2xl mx-auto"
+                        className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto transition-colors"
                     >
                         Discover the most breathtaking valleys, historical sites, and majestic peaks of the North.
                     </motion.p>
@@ -103,14 +103,14 @@ export default function Destinations() {
 
                             {/* Text Content */}
                             <div className="w-full lg:w-1/2 flex flex-col justify-center">
-                                <h4 className="text-3xl font-bold text-slate-900 mb-4">{dest.name}</h4>
-                                <p className="text-lg text-slate-600 mb-6 leading-relaxed">
+                                <h4 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-4 transition-colors">{dest.name}</h4>
+                                <p className="text-lg text-slate-600 dark:text-slate-300 mb-6 leading-relaxed transition-colors">
                                     {dest.description}
                                 </p>
 
                                 <ul className="space-y-3 mb-8">
                                     {dest.features.map((feature, i) => (
-                                        <li key={i} className="flex items-center gap-3 text-slate-700">
+                                        <li key={i} className="flex items-center gap-3 text-slate-700 dark:text-slate-300 transition-colors">
                                             <div className="w-2 h-2 rounded-full bg-emerald-500" />
                                             <span className="font-medium">{feature}</span>
                                         </li>

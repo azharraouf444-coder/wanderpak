@@ -36,10 +36,10 @@ export default function DestinationDetail() {
 
     if (!dest) {
         return (
-            <div className="min-h-screen flex items-center justify-center bg-slate-50">
+            <div className="min-h-screen flex items-center justify-center bg-slate-50 dark:bg-slate-950 transition-colors">
                 <div className="text-center">
-                    <h2 className="text-3xl font-bold text-slate-800 mb-4">Destination not found</h2>
-                    <Link to="/" className="text-emerald-600 hover:text-emerald-700 font-medium">
+                    <h2 className="text-3xl font-bold text-slate-800 dark:text-slate-200 mb-4 transition-colors">Destination not found</h2>
+                    <Link to="/" className="text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 font-medium transition-colors">
                         Return to Home
                     </Link>
                 </div>
@@ -48,7 +48,7 @@ export default function DestinationDetail() {
     }
 
     return (
-        <div className="min-h-screen bg-slate-50 pb-20">
+        <div className="min-h-screen bg-slate-50 dark:bg-slate-950 pb-20 transition-colors">
             {/* Hero Header */}
             <div className="relative h-[60vh] w-full">
                 <div className="absolute inset-0">
@@ -61,7 +61,7 @@ export default function DestinationDetail() {
                 </div>
 
                 <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
-                    <div className="w-full max-w-5xl mx-auto flex justify-start mb-8">
+                    <div className="w-full max-w-5xl mx-auto flex justify-start mb-8 z-10">
                         <Link to="/" className="glass text-white px-4 py-2 rounded-full flex items-center gap-2 hover:bg-white/30 transition-colors">
                             <ArrowLeft className="w-4 h-4" /> Back
                         </Link>
@@ -84,13 +84,13 @@ export default function DestinationDetail() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.1 }}
-                        className="bg-white rounded-2xl shadow-xl p-8 border border-slate-100 flex flex-col items-center justify-center text-center"
+                        className="bg-white dark:bg-slate-900 rounded-2xl shadow-xl dark:shadow-emerald-900/10 p-8 border border-slate-100 dark:border-slate-800 flex flex-col items-center justify-center text-center transition-colors"
                     >
-                        <div className="w-16 h-16 bg-sky-100 text-sky-500 rounded-full flex items-center justify-center mb-4">
+                        <div className="w-16 h-16 bg-sky-100 dark:bg-sky-900/30 text-sky-500 dark:text-sky-400 rounded-full flex items-center justify-center mb-4 transition-colors">
                             <Cloud className="w-8 h-8" />
                         </div>
-                        <h3 className="text-slate-500 font-medium uppercase tracking-wider text-sm mb-1">Weather</h3>
-                        <p className="text-2xl font-bold text-slate-800">{dest.weather}</p>
+                        <h3 className="text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wider text-sm mb-1 transition-colors">Weather</h3>
+                        <p className="text-2xl font-bold text-slate-800 dark:text-slate-100 transition-colors">{dest.weather}</p>
                     </motion.div>
 
                     {/* Temperature Widget */}
@@ -98,13 +98,13 @@ export default function DestinationDetail() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2 }}
-                        className="bg-white rounded-2xl shadow-xl p-8 border border-slate-100 flex flex-col items-center justify-center text-center"
+                        className="bg-white dark:bg-slate-900 rounded-2xl shadow-xl dark:shadow-emerald-900/10 p-8 border border-slate-100 dark:border-slate-800 flex flex-col items-center justify-center text-center transition-colors"
                     >
-                        <div className="w-16 h-16 bg-orange-100 text-orange-500 rounded-full flex items-center justify-center mb-4">
+                        <div className="w-16 h-16 bg-orange-100 dark:bg-orange-900/30 text-orange-500 dark:text-orange-400 rounded-full flex items-center justify-center mb-4 transition-colors">
                             <Thermometer className="w-8 h-8" />
                         </div>
-                        <h3 className="text-slate-500 font-medium uppercase tracking-wider text-sm mb-1">Temperature</h3>
-                        <p className="text-2xl font-bold text-slate-800">{dest.temperature}</p>
+                        <h3 className="text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wider text-sm mb-1 transition-colors">Temperature</h3>
+                        <p className="text-2xl font-bold text-slate-800 dark:text-slate-100 transition-colors">{dest.temperature}</p>
                     </motion.div>
 
                     {/* Location Widget */}
@@ -112,13 +112,13 @@ export default function DestinationDetail() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.3 }}
-                        className="bg-white rounded-2xl shadow-xl p-8 border border-slate-100 flex flex-col items-center justify-center text-center"
+                        className="bg-white dark:bg-slate-900 rounded-2xl shadow-xl dark:shadow-emerald-900/10 p-8 border border-slate-100 dark:border-slate-800 flex flex-col items-center justify-center text-center transition-colors"
                     >
-                        <div className="w-16 h-16 bg-emerald-100 text-emerald-500 rounded-full flex items-center justify-center mb-4">
+                        <div className="w-16 h-16 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-500 dark:text-emerald-400 rounded-full flex items-center justify-center mb-4 transition-colors">
                             <MapPin className="w-8 h-8" />
                         </div>
-                        <h3 className="text-slate-500 font-medium uppercase tracking-wider text-sm mb-1">Location</h3>
-                        <p className="text-2xl font-bold text-slate-800">North Pakistan</p>
+                        <h3 className="text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wider text-sm mb-1 transition-colors">Location</h3>
+                        <p className="text-2xl font-bold text-slate-800 dark:text-slate-100 transition-colors">North Pakistan</p>
                     </motion.div>
                 </div>
 
@@ -130,12 +130,12 @@ export default function DestinationDetail() {
                         initial={{ opacity: 0, x: -30 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.4 }}
-                        className="bg-white rounded-3xl p-8 md:p-10 shadow-lg border border-slate-100"
+                        className="bg-white dark:bg-slate-900 rounded-3xl p-8 md:p-10 shadow-lg border border-slate-100 dark:border-slate-800 transition-colors"
                     >
-                        <h3 className="text-3xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+                        <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3 transition-colors">
                             <Map className="text-emerald-500" /> Discover {dest.name}
                         </h3>
-                        <div className="prose prose-slate prose-emerald text-slate-600 leading-loose text-lg">
+                        <div className="prose prose-slate prose-emerald dark:prose-invert text-slate-600 dark:text-slate-300 leading-loose text-lg transition-colors">
                             <p>{dest.history}</p>
                         </div>
                     </motion.div>

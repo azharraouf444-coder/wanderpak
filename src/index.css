@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-emerald-50: #ecfdf5;
   --color-emerald-100: #d1fae5;
@@ -17,13 +19,11 @@
 
 @layer utilities {
   .glass {
-    @apply bg-white/20 backdrop-blur-md border border-white/30 shadow-lg;
+    @apply bg-white/20 dark:bg-slate-900/40 backdrop-blur-md border border-white/30 dark:border-white/10 shadow-lg;
   }
 }
 
 body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  background-color: #f8fafc;
-  color: #1e293b;
   overflow-x: hidden;
 }
