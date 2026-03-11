@@ -1,9 +1,12 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 import { motion, AnimatePresence } from "framer-motion"
 import { Building2, Car as CarIcon, CreditCard, Calendar, Users, MapPin } from "lucide-react"
 
 export default function BookingEngine() {
     const [activeTab, setActiveTab] = useState("hotel")
+    const [destination, setDestination] = useState("")
+    const navigate = useNavigate()
 
     const tabs = [
         { id: "hotel", label: "Hotel Booking", icon: <Building2 className="w-5 h-5" /> },
@@ -89,11 +92,15 @@ export default function BookingEngine() {
                                             <label className="text-sm font-semibold text-slate-700 dark:text-slate-300 transition-colors ml-1">Destination</label>
                                             <div className="relative">
                                                 <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5" />
-                                                <select className="w-full bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white transition-colors rounded-xl py-3 pl-10 pr-4 focus:ring-2 focus:ring-emerald-500 focus:outline-none appearance-none cursor-pointer">
+                                                <select
+                                                    value={destination}
+                                                    onChange={(e) => setDestination(e.target.value)}
+                                                    className="w-full bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white transition-colors rounded-xl py-3 pl-10 pr-4 focus:ring-2 focus:ring-emerald-500 focus:outline-none appearance-none cursor-pointer"
+                                                >
                                                     <option value="">Select Destination</option>
                                                     <option value="swat">Swat Valley, KP</option>
                                                     <option value="kalam">Kalam Valley, KP</option>
-                                                    <option value="neelum">Neelum Valley, AJK</option>
+                                                    <option value="neelum-valley">Neelum Valley, AJK</option>
                                                     <option value="naran">Naran Kaghan, KP</option>
                                                     <option value="hunza">Hunza, GB</option>
                                                 </select>
@@ -127,7 +134,16 @@ export default function BookingEngine() {
                                         </div>
                                     </div>
 
-                                    <button className="w-full mt-8 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 rounded-xl transition-colors shadow-lg shadow-emerald-600/30 flex items-center justify-center gap-2">
+                                    <button
+                                        onClick={() => {
+                                            if (destination) {
+                                                navigate(`/destination/${destination}`)
+                                            } else {
+                                                alert("Please select a destination first.")
+                                            }
+                                        }}
+                                        className="w-full mt-8 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 rounded-xl transition-colors shadow-lg shadow-emerald-600/30 flex items-center justify-center gap-2"
+                                    >
                                         <Building2 className="w-5 h-5" /> Search Hotels
                                     </button>
                                 </motion.div>
